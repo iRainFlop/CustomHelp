@@ -28,8 +28,6 @@ class Main extends PluginBase implements Listener {
 
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args) : bool
 	{
-		$time = time();
-		$date = date('Y-m-d');
 		if ($sender instanceof Player) {
 			switch ($cmd->getName()) {
 				case "help":
