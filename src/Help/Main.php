@@ -39,6 +39,7 @@ class Main extends PluginBase implements Listener {
 	        $this->registerCommands();
 	}
 
+	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args : bool {
                 $command = explode(" ", strtolower($event->getMessage()));
                 if($command[0] === "/help"){
                   $event->setCancelled(true);
@@ -46,10 +47,7 @@ class Main extends PluginBase implements Listener {
                   if($command[2] === "test, test, test"){
         }
 
-	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args) : bool
-	{
-		$time = time();
-		$date = date('Y-m-d');
+	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args) : bool {
 		if ($sender instanceof Player) {
 			switch ($cmd->getName()) {
 				case "help":
