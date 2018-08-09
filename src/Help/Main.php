@@ -1,6 +1,6 @@
 <?php
 declare(strict_types = 1);
-namespace iRain;
+namespace Help;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\Player;
