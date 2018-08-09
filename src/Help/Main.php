@@ -34,29 +34,22 @@ class Main extends PluginBase implements Listener {
   
 	public function onEnable() : void {
 		$this->getLogger()->info(Main::PREFIX . "IDK");
-		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->saveDefaultConfig();
-	        $this->registerCommands();
 	}
-
-	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args : bool {
-                $command = explode(" ", strtolower($event->getMessage()));
-                if($command[0] === "/help"){
-                  $event->setCancelled(true);
-                  if($command[1] === "test, test, test"){
-                  if($command[2] === "test, test, test"){
-        }
 
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args) : bool {
 		if ($sender instanceof Player) {
 			switch ($cmd->getName()) {
-				case "help":
-					$sender->sendMessage(Main::PREFIX . TextFormat::RED . TextFormat::BOLD . "- HELP -");
-					$sender->sendMessage(Main::PREFIX . TextFormat::RED . TextFormat::BOLD . "/f create");
-					$sender->sendMessage(Main::PREFIX . TextFormat::RED . TextFormat::BOLD . "/f join");
-					$sender->sendMessage(Main::PREFIX . TextFormat::RED . TextFormat::BOLD . "/f del");
-					$sender->sendMessage(Main::PREFIX . TextFormat::RED . TextFormat::BOLD . "/f about");
-					$sender->sendMessage(Main::PREFIX . TextFormat::RED . TextFormat::BOLD . "- HELP -");
+				case "helpme":
+					$sender->sendMessage(TextFormat::RED . TextFormat::BOLD . "- HELP -");
+					$sender->sendMessage(TextFormat::YELLOW . TextFormat::BOLD . "/f create (name) - Create your own faction");
+					$sender->sendMessage(TextFormat::YELLOW . TextFormat::BOLD . "/f accept (faction) - Accept a factions invite");
+					$sender->sendMessage(TextFormat::YELLOW . TextFormat::BOLD . "/f del - Delete your faction");
+					$sender->sendMessage(TextFormat::YELLOW . TextFormat::BOLD . "/f about (faction) - Shows factions information");
+					$sender->sendMessage(TextFormat::YELLOW . TextFormat::BOLD . "/f overclaim - Overclaims another persons claim");
+					$sender->sendMessage(TextFormat::YELLOW . TextFormat::BOLD . "/f war (faction) - Starts a war with another faction");
+					$sender->sendMessage(TextFormat::YELLOW . TextFormat::BOLD . "/f topfactions - Shows top 10 factions");
+					$sender->sendMessage(TextFormat::YELLOW . TextFormat::BOLD . "/f pf (player) - Shows players faction");
+					$sender->sendMessage(TextFormat::RED . TextFormat::BOLD . "- HELP -");
 					return true;
 			}
 		} else {
