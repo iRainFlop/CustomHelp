@@ -5,7 +5,9 @@ api: [3.0.0, 4.0.0]
 author: iRainDrop
 
 commands:
- help:
+ helpme:
   description: "Helps you out with commands and such."
   usage: "/help"
-   
+ helpme factions:
+  description: "Helps you out with commands and such."
+  usage: "/helpme factions"
