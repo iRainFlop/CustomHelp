@@ -17,23 +17,8 @@ use pocketmine\event\PluginCommand;
 class Main extends PluginBase implements Listener {
 	public const PREFIX = TextFormat::YELLOW . "Welcome!" . TextFormat::DARK_GRAY. " ";
   
-	public function onLoad()  : void {
-		$int = rand(1, 3);
-		switch ($int) {
-			case 1:
-				$str = "FUN";
-				break;
-			case 2:
-				$str = "EASY";
-				break;
-			case 3:
-				$str = "SIMPLE";
-		}
-		$this->getLogger()->info(Main::PREFIX . "CODING IS " . $str);
-	}
-  
 	public function onEnable() : void {
-		$this->getLogger()->info(Main::PREFIX . "IDK");
+		$this->getLogger()->info(Main::PREFIX . "Plugin has been Enabled");
 	}
 
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args) : bool {
@@ -58,6 +43,6 @@ class Main extends PluginBase implements Listener {
 	}
   
 	public function onDisable() : void {
-		$this->getLogger()->info(Main::PREFIX . "Oml");
+		$this->getLogger()->info(Main::PREFIX . "Plugin has been Disabled");
 	}
 }
