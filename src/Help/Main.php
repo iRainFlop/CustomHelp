@@ -48,15 +48,6 @@ class Main extends PluginBase implements Listener {
                   if($command[2] === "test, test, test"){
   }
 
-	private function registerCommands(){
-		$map = $this->getServer()->getCommandMap();
-		$old = $map->getCommand("help");
-		$old->setLabel("help_disabled");
-		$old->unregister($map);
-		$new = new CommandHelp($this);
-		$map->register($this->getName(), $new, "help");
-	}
-
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args) : bool
 	{
 		$time = time();
