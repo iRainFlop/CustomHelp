@@ -14,17 +14,53 @@ use pocketmine\command\ConsoleCommandSender;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\PluginCommand;
 
+use Custom\Commands\CommandHelp
+
 class Main extends PluginBase implements Listener {
+	public const PREFIX = TextFormat::YELLOW . "Welcome!" . TextFormat::DARK_GRAY. " ";
+  
+	public function onLoad()  : void {
+		$int = rand(1, 3);
+		switch ($int) {
+			case 1:
+				$str = "FUN";
+				break;
+			case 2:
+				$str = "EASY";
+				break;
+			case 3:
+				$str = "SIMPLE";
+		}
+		$this->getLogger()->info(Main::PREFIX . "CODING IS " . $str);
+	}
   
 	public function onEnable() : void {
-		$this->getLogger()->info(Main::PREFIX . "Plugin has been Enabled.");
-		$this->getServer()->getPluginManager()->registerEvents();
+		$this->getLogger()->info(Main::PREFIX . "IDK");
+		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->saveDefaultConfig();
 	        $this->registerCommands();
 	}
 
+                $command = explode(" ", strtolower($event->getMessage()));
+                if($command[0] === "/help"){
+                  $event->setCancelled(true);
+                  if($command[1] === "test, test, test"){
+                  if($command[2] === "test, test, test"){
+  }
+
+	private function registerCommands(){
+		$map = $this->getServer()->getCommandMap();
+		$old = $map->getCommand("help");
+		$old->setLabel("help_disabled");
+		$old->unregister($map);
+		$new = new CommandHelp($this);
+		$map->register($this->getName(), $new, "help");
+	}
+
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args) : bool
 	{
+		$time = time();
+		$date = date('Y-m-d');
 		if ($sender instanceof Player) {
 			switch ($cmd->getName()) {
 				case "help":
@@ -37,11 +73,11 @@ class Main extends PluginBase implements Listener {
 					return true;
 			}
 		} else {
-
+			//Code for console
 		}
 	}
   
 	public function onDisable() : void {
-		$this->getLogger()->info(Main::PREFIX . "Plugin has been Disabled.");
+		$this->getLogger()->info(Main::PREFIX . "Oml");
 	}
 }
