@@ -46,7 +46,7 @@ class Main extends PluginBase implements Listener {
                   $event->setCancelled(true);
                   if($command[1] === "test, test, test"){
                   if($command[2] === "test, test, test"){
-  }
+        }
 
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args) : bool
 	{
