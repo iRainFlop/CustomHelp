@@ -35,6 +35,7 @@ class Main extends PluginBase implements Listener {
 		$this->getLogger()->info(Main::PREFIX . "IDK");
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->saveDefaultConfig();
+	        $this->registerCommands();
 	}
   
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args) : bool
