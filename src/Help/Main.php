@@ -17,7 +17,6 @@ use pocketmine\event\PluginCommand;
 use Custom\Commands\CommandHelp
 
 class Main extends PluginBase implements Listener {
-	public const PREFIX = TextFormat::YELLOW . "Welcome!" . TextFormat::DARK_GRAY. " ";
   
 	public function onEnable() : void {
 		$this->getLogger()->info(Main::PREFIX . "Plugin has been Enabled.");
