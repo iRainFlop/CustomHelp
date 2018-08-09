@@ -14,8 +14,6 @@ use pocketmine\command\ConsoleCommandSender;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\PluginCommand;
 
-use Custom\Commands\CommandHelp
-
 class Main extends PluginBase implements Listener {
 	public const PREFIX = TextFormat::YELLOW . "Welcome!" . TextFormat::DARK_GRAY. " ";
   
