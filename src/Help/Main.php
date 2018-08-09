@@ -18,7 +18,7 @@ class Main extends PluginBase implements Listener {
   
 	public function onEnable() : void {
 		$this->getLogger()->info(Main::PREFIX . "Plugin has been Enabled.");
-		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+		$this->getServer()->getPluginManager()->registerEvents();
 		$this->saveDefaultConfig();
 	        $this->registerCommands();
 	}
